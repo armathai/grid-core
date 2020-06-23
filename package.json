@@ -1,0 +1,44 @@
+{
+  "name": "@armathai/grid-core",
+  "version": "1.0.0",
+  "description": "core functionality for grid system",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build --scripts-prepend-node-path",
+    "prepublishOnly": "npm test && npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/armathai/grid-core.git"
+  },
+  "keywords": [
+    "Grid"
+  ],
+  "author": "Armathai LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/armathai/grid-core/issues"
+  },
+  "homepage": "https://github.com/armathai/grid-core#readme",
+  "devDependencies": {
+    "@types/jest": "^25.1.2",
+    "bufferutil": "^4.0.1",
+    "canvas": "^2.6.1",
+    "jest": "^25.1.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^25.2.0",
+    "tslint": "^6.0.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.6.4",
+    "utf-8-validate": "^5.0.2"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "dependencies": {}
+}
