@@ -1,6 +1,6 @@
 {
     "name": "@armathai/grid-core",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "core functionality for grid system",
     "main": "dist/grid-core.cjs.js",
     "module": "dist/grid-core.esm.js",
