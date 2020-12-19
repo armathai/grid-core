@@ -10,7 +10,7 @@
         "build": "rollup -c && tsc",
         "dev": "rollup -c -w",
         "test": "jest --config jestconfig.json",
-        "lint": "tsc && eslint '*/**/*.{js,ts,ts}'  --fix",
+        "lint": "tsc && eslint '*/**/*.{js,ts,ts}' --fix",
         "prepare": "npm run build --scripts-prepend-node-path",
         "prepublishOnly": "npm test && npm run lint"
     },
@@ -46,7 +46,7 @@
         "typescript": "^4.1.3"
     },
     "files": [
-        "lib/**/*"
+        "dist/**/*"
     ],
     "dependencies": {}
 }
