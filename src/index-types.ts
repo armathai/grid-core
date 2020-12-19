@@ -1,2 +1,2 @@
 export * from './index';
-export { ICellConfig, IDebug, IDimension } from './Types';
+export { ICellConfig, IDebug, IDimension, IRawBounds } from './Types';
