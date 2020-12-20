@@ -20,7 +20,21 @@ export default [
             babel({
                 extensions,
                 exclude: ['node_modules/**'],
-                presets: ['@babel/preset-typescript'],
+                presets: [
+                    [
+                        '@babel/preset-env',
+                        {
+                            useBuiltIns: 'usage',
+                            modules: false,
+                            corejs: { version: 3, proposals: true },
+                            targets: {
+                                browsers: ['ios >= 10', 'and_chr >= 20', 'safari >= 8'],
+                            },
+                            debug: true,
+                        },
+                    ],
+                    '@babel/preset-typescript',
+                ],
                 plugins: ['@babel/plugin-proposal-class-properties'],
             }),
         ],
@@ -44,7 +58,21 @@ export default [
             babel({
                 extensions,
                 exclude: ['node_modules/**'],
-                presets: ['@babel/preset-typescript'],
+                presets: [
+                    [
+                        '@babel/preset-env',
+                        {
+                            useBuiltIns: 'usage',
+                            modules: false,
+                            corejs: { version: 3, proposals: true },
+                            targets: {
+                                browsers: ['ios >= 10', 'and_chr >= 20', 'safari >= 8'],
+                            },
+                            debug: true,
+                        },
+                    ],
+                    '@babel/preset-typescript',
+                ],
                 plugins: ['@babel/plugin-proposal-class-properties'],
             }),
         ],
