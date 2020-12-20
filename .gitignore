@@ -42,6 +42,7 @@ node_modules
 node_modules/*
 build
 build/*
+/package-lock.json
 
 # EDITOR #
 ##########
