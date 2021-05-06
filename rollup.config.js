@@ -1,12 +1,9 @@
-import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
-import { terser } from 'rollup-plugin-terser';
+import typescript from '@rollup/plugin-typescript';
 import pkg from './package.json';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
-
-const name = 'grid-core';
 
 export default {
     input: './src/index.ts',
@@ -23,25 +20,7 @@ export default {
         commonjs(),
 
         // Compile TypeScript/JavaScript files
-        babel({
-            extensions,
-            include: ['src/**/*'],
-            presets: [
-                [
-                    '@babel/preset-env',
-                    {
-                        useBuiltIns: 'usage',
-                        corejs: { version: 3, proposals: true },
-                        bugfixes: true,
-                        debug: true,
-                    },
-                ],
-                '@babel/preset-typescript',
-            ],
-            plugins: ['@babel/plugin-proposal-class-properties'],
-        }),
-
-        terser(),
+        typescript(),
     ],
 
     output: [
@@ -52,13 +31,6 @@ export default {
         {
             file: pkg.module,
             format: 'es',
-        },
-        {
-            file: pkg.browser,
-            format: 'umd',
-            name,
-            // https://rollupjs.org/guide/en#output-globals-g-globals
-            globals: {},
         },
     ],
 };
